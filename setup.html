@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Set up PrivatePages</title>
+<link rel="stylesheet" href="shared.css" />
+</head>
+<body>
+  <div class="pp-page">
+    <div class="pp-card">
+      <img src="icons/icon128.png" class="pp-card-logo" alt="" />
+      <h1>Welcome to PrivatePages</h1>
+
+      <div id="pp-step-pin">
+        <p class="pp-muted">Create a 6-digit PIN. You'll use it to lock and unlock sites.</p>
+        <label class="pp-label">New PIN</label>
+        <input id="pp-pin1" type="password" inputmode="numeric" maxlength="6" class="pp-pin-input" placeholder="••••••" />
+        <label class="pp-label">Confirm PIN</label>
+        <input id="pp-pin2" type="password" inputmode="numeric" maxlength="6" class="pp-pin-input" placeholder="••••••" />
+        <div id="pp-pin-error" class="pp-error"></div>
+        <button id="pp-create-btn" class="pp-btn pp-btn-primary">Create PIN</button>
+      </div>
+
+      <div id="pp-step-recovery" class="pp-hidden">
+        <p class="pp-muted">
+          PrivatePages doesn't link to email or any account, so this recovery key is the
+          <strong>only</strong> way back in if you forget your PIN. Save it somewhere safe
+          (a password manager is ideal). It will not be shown again.
+        </p>
+        <div id="pp-recovery-key" class="pp-recovery-key"></div>
+        <label class="pp-confirm-row">
+          <input type="checkbox" id="pp-recovery-confirm" />
+          I've saved my recovery key
+        </label>
+        <button id="pp-finish-btn" class="pp-btn pp-btn-primary" disabled>Finish setup</button>
+      </div>
+
+      <div id="pp-step-done" class="pp-hidden">
+        <p class="pp-muted">You're all set. Click the PrivatePages icon in your toolbar to lock the site you're on, or open Settings to manage your list.</p>
+        <button id="pp-open-options-btn" class="pp-btn pp-btn-primary">Open Settings</button>
+      </div>
+    </div>
+  </div>
+  <script src="setup.js"></script>
+</body>
+</html>

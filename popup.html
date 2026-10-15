@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>PrivatePages</title>
+<link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <div class="pp-header">
+    <img src="icons/icon48.png" alt="" class="pp-logo" />
+    <div>
+      <div class="pp-title">PrivatePages</div>
+      <div class="pp-subtitle" id="pp-subtitle">Loading…</div>
+    </div>
+  </div>
+
+  <div id="pp-not-setup" class="pp-section pp-hidden">
+    <p>You haven't set up a PIN yet.</p>
+    <button id="pp-goto-setup" class="pp-btn pp-btn-primary">Set up PIN</button>
+  </div>
+
+  <div id="pp-setup-ok" class="pp-section pp-hidden">
+    <div class="pp-domain-row">
+      <span class="pp-domain-label">This site</span>
+      <span id="pp-domain" class="pp-domain-value">—</span>
+    </div>
+
+    <div id="pp-state-unlocked" class="pp-hidden">
+      <button id="pp-lock-btn" class="pp-btn pp-btn-primary">Lock this site</button>
+    </div>
+
+    <div id="pp-state-locked" class="pp-hidden">
+      <div class="pp-locked-badge">Locked</div>
+      <p class="pp-hint">Enter your PIN to unlock temporarily.</p>
+      <input id="pp-unlock-pin" type="password" inputmode="numeric" maxlength="6" placeholder="6-digit PIN" class="pp-pin-input" />
+      <button id="pp-unlock-btn" class="pp-btn pp-btn-secondary">Unlock for 5 min</button>
+      <div id="pp-unlock-error" class="pp-error"></div>
+    </div>
+
+    <hr class="pp-divider" />
+    <button id="pp-open-options" class="pp-btn pp-btn-link">Manage locked sites & settings</button>
+  </div>
+
+  <script src="lib/domain.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

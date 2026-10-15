@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>PrivatePages Settings</title>
+<link rel="stylesheet" href="shared.css" />
+</head>
+<body>
+  <div class="pp-page">
+    <div class="pp-card" style="max-width:560px;">
+      <img src="icons/icon128.png" class="pp-card-logo" alt="" />
+      <h1>PrivatePages Settings</h1>
+
+      <div id="pp-needs-setup" class="pp-hidden">
+        <p class="pp-muted">You haven't created a PIN yet.</p>
+        <button id="pp-goto-setup" class="pp-btn pp-btn-primary">Set up PIN</button>
+      </div>
+
+      <div id="pp-main" class="pp-hidden">
+        <div class="pp-section-title">Locked sites</div>
+        <p class="pp-muted">Locking a domain blocks it and every subdomain (www., m., etc.) and every page/path under it. No PIN needed to add a site — only to remove one.</p>
+        <div class="pp-inline-row">
+          <input id="pp-add-domain" type="text" class="pp-text-input" placeholder="e.g. facebook.com" />
+          <button id="pp-add-btn" class="pp-btn pp-btn-primary">Lock</button>
+        </div>
+        <div id="pp-add-error" class="pp-error"></div>
+        <div id="pp-site-list" style="margin-top:14px;"></div>
+
+        <div class="pp-section-title">Change PIN</div>
+        <label class="pp-label">Current PIN</label>
+        <input id="pp-old-pin" type="password" inputmode="numeric" maxlength="6" class="pp-pin-input" placeholder="••••••" />
+        <label class="pp-label">New PIN</label>
+        <input id="pp-new-pin1" type="password" inputmode="numeric" maxlength="6" class="pp-pin-input" placeholder="••••••" />
+        <label class="pp-label">Confirm new PIN</label>
+        <input id="pp-new-pin2" type="password" inputmode="numeric" maxlength="6" class="pp-pin-input" placeholder="••••••" />
+        <div id="pp-changepin-error" class="pp-error"></div>
+        <div id="pp-changepin-success" class="pp-success"></div>
+        <button id="pp-changepin-btn" class="pp-btn pp-btn-secondary">Update PIN</button>
+
+        <div class="pp-section-title">Recovery key</div>
+        <p class="pp-muted">Generate a new recovery key if you've lost the old one. This immediately invalidates your previous key.</p>
+        <label class="pp-label">Current PIN</label>
+        <input id="pp-regen-pin" type="password" inputmode="numeric" maxlength="6" class="pp-pin-input" placeholder="••••••" />
+        <div id="pp-regen-error" class="pp-error"></div>
+        <button id="pp-regen-btn" class="pp-btn pp-btn-secondary">Generate new recovery key</button>
+        <div id="pp-regen-key" class="pp-recovery-key pp-hidden"></div>
+
+        <div class="pp-section-title">Remove a locked site</div>
+        <p class="pp-muted">Removing a site from the list requires your PIN and is handled in the list above (click "Remove" next to a site).</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="pp-pin-modal-overlay" class="pp-hidden" style="position:fixed;inset:0;background:rgba(0,0,0,0.4);display:flex;align-items:center;justify-content:center;">
+    <div class="pp-card" style="max-width:340px;">
+      <h1 style="font-size:16px;">Enter PIN to confirm</h1>
+      <input id="pp-modal-pin" type="password" inputmode="numeric" maxlength="6" class="pp-pin-input" placeholder="••••••" />
+      <div id="pp-modal-error" class="pp-error"></div>
+      <button id="pp-modal-confirm" class="pp-btn pp-btn-danger">Remove site</button>
+      <button id="pp-modal-cancel" class="pp-btn pp-btn-secondary">Cancel</button>
+    </div>
+  </div>
+
+  <script src="options.js"></script>
+</body>
+</html>

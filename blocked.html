@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Locked — PrivatePages</title>
+<link rel="stylesheet" href="shared.css" />
+</head>
+<body>
+  <div class="pp-page">
+    <div class="pp-card">
+      <img src="icons/icon128.png" class="pp-card-logo" alt="" />
+      <h1>This site is locked</h1>
+      <p class="pp-muted"><strong id="pp-blocked-domain">this site</strong> is on your locked list. Enter your PIN to continue.</p>
+
+      <label class="pp-label">PIN</label>
+      <input id="pp-pin" type="password" inputmode="numeric" maxlength="6" class="pp-pin-input" placeholder="••••••" autofocus />
+      <div id="pp-error" class="pp-error"></div>
+      <button id="pp-unlock-btn" class="pp-btn pp-btn-primary">Unlock for 5 minutes</button>
+      <button id="pp-back-btn" class="pp-btn pp-btn-secondary">Go back</button>
+      <button id="pp-forgot-btn" class="pp-btn pp-btn-link">Forgot PIN? Use recovery key</button>
+
+      <div id="pp-recovery-section" class="pp-hidden">
+        <hr style="border:none;border-top:1px solid #eaeaf2;margin:16px 0;" />
+        <label class="pp-label">Recovery key</label>
+        <input id="pp-recovery-input" type="text" class="pp-text-input" placeholder="XXXXX-XXXXX-XXXXX-XXXXX-XXXXX" />
+        <label class="pp-label">New PIN</label>
+        <input id="pp-new-pin" type="password" inputmode="numeric" maxlength="6" class="pp-pin-input" placeholder="••••••" />
+        <div id="pp-recovery-error" class="pp-error"></div>
+        <button id="pp-recovery-submit" class="pp-btn pp-btn-primary">Reset PIN & continue</button>
+      </div>
+    </div>
+  </div>
+  <script src="blocked.js"></script>
+</body>
+</html>
